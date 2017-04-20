@@ -1,0 +1,115 @@
+cd /var/www/blog
+ php bin/console server:start      (ctrl + c - stop)
+http://127.0.0.1:8000 
+
+php bin/console generate:controller
+Controller name: AppBundle:Homepage
+    annotation
+    twig
+New action name (press <return> to stop adding actions): indexAction
+Action route [/index]: /
+Template name (optional) [AppBundle:Homepage:index.html.twig]:
+
+
+created ./src/AppBundle/Resources/views/Homepage/
+  created ./src/AppBundle/Resources/views/Homepage/index.html.twig
+  created ./src/AppBundle/Controller/HomepageController.php
+  created ./src/AppBundle/Tests/Controller/
+  created ./src/AppBundle/Tests/Controller/HomepageControllerTest.php
+
+git init
+Инициализирован пустой репозиторий Git в /var/www/blog/.git/
+
+
+
+
+
+
+
+
+
+****** notes **************
+The recommended approach of using the AppBundle/ directory is for simplicity.
+Create only one bundle called AppBundle for your application logic.
+
+Define the infrastructure-related configuration options in the app/config/parameters.yml file.
+
+Define all your application's parameters in the app/config/parameters.yml.dist file.(deploys it to a server)
+
+Use the YAML format to define your own services.
+
+Use annotations to define the mapping information of the Doctrine entities.
+
+
+thin controllers and fat models
+
+You should follow the 5-10-20 rule, where controllers should only define 5 variables
+or less, contain 10 actions or less and include 20 lines of code or less in each action.
+
+Make your controller extend the FrameworkBundle base controller and use annotations to configure routing,
+caching and security whenever possible.
+
+Don't use the @Template annotation to configure the template used by the controller.
+Use the ParamConverter trick to automatically query for Doctrine entities when it's simple and convenient.
+
+Use Twig templating format for your templates.
+Store all your application's templates in app/Resources/views/ directory.
+Use lowercased snake_case for directory and template names.
+----------------------------------------------|---------------------------------------------------------
+Templates Stored inside Bundles               |               Templates Stored in app/
+
+AcmeDemoBundle:Default:index.html.twig                               default/index.html.twig
+::layout.html.twig                                                   layout.html.twig
+AcmeDemoBundle::index.html.twig                                      index.html.twig
+AcmeDemoBundle:Default:subdir/index.html.twig                        default/subdir/index.html.twig
+AcmeDemoBundle:Default/subdir:index.html.twig                        default/subdir/index.html.twig
+--------------------------------------------------------------------------------------------------------
+
+Define your forms as PHP classes.     (class PostType extends AbstractType)
+Put the form type classes in the AppBundle\Form namespace, unless you use other custom form classes like
+data transformers.
+
+To use the class, use createForm() and pass the fully qualified class name:
+// ...
+use AppBundle\Form\PostType;
+// ...
+public function newAction(Request $request)
+{
+    $post = new Post();
+    $form = $this->createForm(PostType::class, $post);
+    // ...
+}
+
+Add buttons in the templates, not in the form classes or the controllers.
+...
+
+
+Store your assets in the web/ directory.
+
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+{# ... #}
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+Keep in mind that web/ is a public directory and that anything stored here will be publicly
+accessible, including all the original asset files (e.g. Sass, LESS and CoffeeScript files).
+
+Use Assetic to compile, combine and minimize web assets, unless you're comfortable with frontend tools like
+GruntJS.
+
+----TEST----
+Hardcode the URLs used in the functional tests instead of using the URL generator.
+
+
+
+
+
+
+
+
+
+
+
+
+

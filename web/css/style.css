@@ -1,0 +1,249 @@
+    body{   
+      margin:0px;
+      /*background-image: url("images/mehanizm_shesterenki_makro_2560x1600.jpg");*/
+      background-image: url("/MVCBlog/template/images/239H.jpg");
+      display:flex;   
+      flex-flow:row wrap;
+
+    }
+
+    body  > header,main,aside,footer{  
+      background:#ccc; 
+      opacity: 0.8;  
+      border-radius:4px;   
+      margin:5px;   
+      padding:20px;
+      color: #000000 ;
+    }
+
+    body > header{   
+      order:1;   
+      height:50px;  
+      flex:0 1 100%;
+    }
+
+    /* aside */
+
+    body > aside{  
+      order:2;   
+      flex:0 1 200px;
+    }
+    body > aside {
+      text-align:center;
+    }
+    #srch{                  
+
+      color: #668D8A;
+      font-size: 20px;
+    }
+    .titl{
+      color: #ffffff;
+      font-weight:bold;
+      font-size: 24px;
+      border-bottom: 1px solid grey;
+    }
+    p>a{
+      color:#988177;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+    aside form input {
+      border:1px #c1c1c1 solid; 
+      width:100%; 
+      height: 25px;
+      border-radius:5px;
+      font-size: 15px;
+    }
+
+    .active{
+      color: #DAA520;
+    }
+
+    /* /aside */
+
+
+    /* aside_admin*/
+    aside#admin ul>li {
+      border:1px #c1c1c1 solid; 
+      width:100%; 
+      height: 25px;
+      border-radius:5px;
+      margin:5px;
+      list-style:none;
+      background: #F5F5DC;
+
+    }
+
+    aside#admin li>a{
+     text-decoration: none;
+     font-size: 20px;
+     color:#5F9EA0;
+   }
+   aside#admin p>a{
+     font-size: 24px;
+     border:1px #c1c1c1 solid; 
+     border-radius:10px;
+     text-decoration: none;
+     padding: 5px 20px 5px 20px;
+     background: #F5F5DC;
+     color:#CD5C5C;
+   }
+   /*/aside_admin*/
+
+
+   /* admin_form*/
+
+   #adminForm{
+     background-image: url("/MVCBlog/template/images/239H.jpg"); 
+   }
+
+   body#adminForm div{
+    width:50%; 
+    height:230px;
+    border:1px #c1c1c1 solid; 
+    position: relative;
+    left:25%;
+    top: 270px;
+    background: grey;
+    opacity: 0.5;
+    text-align: center;
+
+  }
+
+  body#adminForm form>input{
+    width:50%; 
+    height: 30px;
+    margin:5px;
+    border-radius:5px;
+    font-size: 20px;
+    background: #DCDCDC;
+
+  }
+
+  /* /admin_form*/
+
+
+  /*main*/
+
+  body > main{  
+    order:3;   
+    min-height:590px;  
+    flex:1;
+  }
+
+  main table tr th img{
+    position: relative;
+    left: 10px;
+    top:10px;
+  }
+
+  main table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, td, th {
+    border: 1px solid grey;
+  }
+
+  main table tr th {
+    text-align: left;
+  }
+
+  main table tr th a{
+    text-decoration: none;
+
+  }
+
+  main table tr th a:hover{
+
+    text-decoration: underline;
+  }
+
+  main table tr:hover {
+    background-color: #f5f5f5
+  }
+
+
+  main p.post_title{
+    text-align:center;
+    font-size: 25px;
+    color: #663;
+  }
+
+  main p.post_title+p+p{
+    color: #FFFFFF;
+  } 
+
+  .post_comment{
+    font-size: 20px;
+    border-bottom: 1px solid #28A1E8;
+    color: #28A1E8;
+
+  }
+
+  .post_comment~p{
+    font-size: 20px;
+    color: #000;
+
+  }
+
+  main p.post_add_comment{
+    font-size: 20px;
+    border-bottom: 1px solid #ae323b;
+    color: #ae323b;
+
+  }
+
+  main p.post_add_comment + form{
+    font-size: 18px;
+    color: #663;
+
+  }
+
+  main p.post_add_comment + form p:first-child > input[type=text]{
+   border-radius: 8px;
+   font-size: 18px;
+   width: 170px;
+   height: 20px;
+ }
+
+ main p.post_add_comment + form p:nth-last-child(3) > input[type=text]{
+   border-radius: 8px;
+   font-size: 18px;
+   width: 170px;
+   height: 20px;
+ }
+
+ main p.post_add_comment + form p:last-child > input[type=submit]{
+   border-radius: 8px;
+   font-size: 18px;
+   width: 170px;
+   height: 25px;
+ }
+
+ #buttonComment{
+   color: #333;
+   width:700px; 
+   height: 35px;
+   border-radius:10px;
+   font-size: 15px;
+ }
+
+ div#commentDiv{
+  font-size: 18px;
+}
+
+/*/main*/
+
+
+/*footer*/
+
+
+body > footer{  
+  order:4; 
+  height:50px;  
+  flex:0 1 100%;
+} 
+
