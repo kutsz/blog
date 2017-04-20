@@ -11,20 +11,38 @@ Action route [/index]: /
 Template name (optional) [AppBundle:Homepage:index.html.twig]:
 
 
-created ./src/AppBundle/Resources/views/Homepage/
+  created ./src/AppBundle/Resources/views/Homepage/
   created ./src/AppBundle/Resources/views/Homepage/index.html.twig
   created ./src/AppBundle/Controller/HomepageController.php
   created ./src/AppBundle/Tests/Controller/
   created ./src/AppBundle/Tests/Controller/HomepageControllerTest.php
-
+------------------------ git --- heroku ----------------------------------------------
 git init
 Инициализирован пустой репозиторий Git в /var/www/blog/.git/
+git add .
+git commit -m "first commit"
 
+git remote add origin https://github.com/kutsz/blog.git
+git push -u origin master
 
+ heroku login
+heroku create blog-symfony-1
+https://blog-symfony-1.herokuapp.com/ | https://git.heroku.com/blog-symfony-1.git
 
+heroku config:set SYMFONY_ENV=prod   // run this one command as the last step before deploying your app for the first time:
+git push heroku master
 
+ git remote -v    // just info , not to do
+heroku	https://git.heroku.com/blog-symfony-1.git (fetch)
+heroku	https://git.heroku.com/blog-symfony-1.git (push)
+origin	https://github.com/kutsz/blog.git (fetch)
+origin	https://github.com/kutsz/blog.git (push)
+----------------------------------------------------------\
 
-
+php bin/console doctrine:database:create
+php bin/console doctrine:generate:entity
+php bin/console doctrine:generate:crud
+php bin/console doctrine:schema:create
 
 
 

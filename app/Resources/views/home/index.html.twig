@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Homes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home in homes %}
+            <tr>
+                <td><a href="{{ path('home_show', { 'id': home.id }) }}">{{ home.id }}</a></td>
+                <td>{{ home.title }}</td>
+                <td>{{ home.text }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('home_show', { 'id': home.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
