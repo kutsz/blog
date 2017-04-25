@@ -1,0 +1,15 @@
+{% extends 'blogBase.html.twig' %}
+
+{% block body %}
+    <h1>Homes list of titles</h1>
+
+    <ul>
+        {% for home in homes %}
+            
+                <li>{{ home.title }}</li>
+                
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
+

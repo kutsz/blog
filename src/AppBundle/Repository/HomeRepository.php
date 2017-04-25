@@ -10,4 +10,9 @@ namespace AppBundle\Repository;
  */
 class HomeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllTitle(){
+        return $this->getEntityManager()->createQuery(
+                'SELECT title FROM AppBundle:Home title')
+                ->getResult();
+    }
 }

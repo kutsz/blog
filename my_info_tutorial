@@ -16,6 +16,7 @@ Template name (optional) [AppBundle:Homepage:index.html.twig]:
   created ./src/AppBundle/Controller/HomepageController.php
   created ./src/AppBundle/Tests/Controller/
   created ./src/AppBundle/Tests/Controller/HomepageControllerTest.php
+
 ------------------------ git --- heroku ----------------------------------------------
 git init
 Инициализирован пустой репозиторий Git в /var/www/blog/.git/
@@ -37,14 +38,31 @@ heroku	https://git.heroku.com/blog-symfony-1.git (fetch)
 heroku	https://git.heroku.com/blog-symfony-1.git (push)
 origin	https://github.com/kutsz/blog.git (fetch)
 origin	https://github.com/kutsz/blog.git (push)
-----------------------------------------------------------\
+--------------------------doctrine--------------------------------\
 
 php bin/console doctrine:database:create
 php bin/console doctrine:generate:entity
 php bin/console doctrine:generate:crud
 php bin/console doctrine:schema:create
 
+heroku addons:create cleardb:ignite // for mysql ??
 
+$em = $this->getDoctrine()->getManager(); 
+// Doctrine's entity manager object,
+which is responsible for the process of persisting objects to, and fetching objects from, the database.
+
+$homes = $em->getRepository('AppBundle:Home')->findAll();
+
+----------------
+
+* requirements = {
+     * "":"",
+     * "":""
+     * }
+-------------------twig------------------
+{% include "nav.html" %}
+{{ include('article/article_details.html.twig', { 'article': article }) }}
+The template is included using the {{ include() }} function.
 
 ****** notes **************
 The recommended approach of using the AppBundle/ directory is for simplicity.

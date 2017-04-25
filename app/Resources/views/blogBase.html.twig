@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+
+    </head>
+    <body>
+  
+    {% block header %}
+        <header>  
+            <img src="{{ asset('images/blog.png') }}" width="100" height="50" alt="logo">
+        </header>  
+    {% endblock %}
+{% block aside %}{% endblock %}
+  {% block body %}{% endblock %}
+{% block footer %}
+    <footer>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. 
+    </footer>
+{% endblock %}
+</body>
+</html>
+
